@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		485694111D88BE3800A7219D /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485694101D88BE3800A7219D /* LevelsViewController.swift */; };
+		485694131D88BFA100A7219D /* EasyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485694121D88BFA100A7219D /* EasyViewController.swift */; };
+		485694151D88BFE500A7219D /* MediumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485694141D88BFE500A7219D /* MediumViewController.swift */; };
+		485694171D88C01F00A7219D /* HardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485694161D88C01F00A7219D /* HardViewController.swift */; };
 		4867C2981D86159D0090E335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4867C2971D86159D0090E335 /* AppDelegate.swift */; };
 		4867C29A1D86159D0090E335 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4867C2991D86159D0090E335 /* ViewController.swift */; };
 		4867C29D1D86159D0090E335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4867C29B1D86159D0090E335 /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		485694101D88BE3800A7219D /* LevelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
+		485694121D88BFA100A7219D /* EasyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyViewController.swift; sourceTree = "<group>"; };
+		485694141D88BFE500A7219D /* MediumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumViewController.swift; sourceTree = "<group>"; };
+		485694161D88C01F00A7219D /* HardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardViewController.swift; sourceTree = "<group>"; };
 		4867C2941D86159D0090E335 /* T01_Orange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T01_Orange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4867C2971D86159D0090E335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4867C2991D86159D0090E335 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,9 +108,13 @@
 				4867C2971D86159D0090E335 /* AppDelegate.swift */,
 				4867C2991D86159D0090E335 /* ViewController.swift */,
 				4867C29B1D86159D0090E335 /* Main.storyboard */,
+				485694161D88C01F00A7219D /* HardViewController.swift */,
+				485694141D88BFE500A7219D /* MediumViewController.swift */,
 				4867C29E1D86159D0090E335 /* Assets.xcassets */,
 				4867C2A01D86159D0090E335 /* LaunchScreen.storyboard */,
 				4867C2A31D86159D0090E335 /* Info.plist */,
+				485694101D88BE3800A7219D /* LevelsViewController.swift */,
+				485694121D88BFA100A7219D /* EasyViewController.swift */,
 			);
 			path = T01_Orange;
 			sourceTree = "<group>";
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				485694131D88BFA100A7219D /* EasyViewController.swift in Sources */,
+				485694151D88BFE500A7219D /* MediumViewController.swift in Sources */,
+				485694111D88BE3800A7219D /* LevelsViewController.swift in Sources */,
 				4867C29A1D86159D0090E335 /* ViewController.swift in Sources */,
 				4867C2981D86159D0090E335 /* AppDelegate.swift in Sources */,
+				485694171D88C01F00A7219D /* HardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +515,7 @@
 				4867C2BE1D86159D0090E335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4867C2BF1D86159D0090E335 /* Build configuration list for PBXNativeTarget "T01_OrangeTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +524,7 @@
 				4867C2C11D86159D0090E335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4867C2C21D86159D0090E335 /* Build configuration list for PBXNativeTarget "T01_OrangeUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +533,7 @@
 				4867C2C41D86159D0090E335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

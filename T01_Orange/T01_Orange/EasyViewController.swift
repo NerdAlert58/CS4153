@@ -10,10 +10,44 @@ import UIKit
 
 class EasyViewController: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let slideRight = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
+        slideRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(slideRight)
+        let slideLeft = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
+        slideLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(slideLeft)
+        let slideUp = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
+        slideRight.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(slideUp)
+        let slideDown = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
+        slideRight.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(slideDown)
+        
+    }
+    
+    func slideBlock(gesture: UIGestureRecognizer) {
+        
+        if let slideGesture = gesture as? UISwipeGestureRecognizer {
+            
+            
+            switch slideGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+            case UISwipeGestureRecognizerDirection.down:
+                print("Swiped down")
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

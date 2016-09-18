@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var lblSplash: UILabel!
     @IBOutlet weak var btnStart: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

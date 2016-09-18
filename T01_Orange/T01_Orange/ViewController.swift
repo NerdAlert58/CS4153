@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblSplash: UILabel!
     @IBOutlet weak var btnStart: UIButton!
     
+    @IBAction func btnClicked(_ sender: AnyObject) {
+        btnStart.imageView?.image = UIImage(named: "Start.png")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -13,28 +13,29 @@ class EasyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        let slideRight = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
+        let slideRight = UISwipeGestureRecognizer(target: self, action:#selector(EasyViewController.slideBlock(gesture:)))
         slideRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(slideRight)
-        let slideLeft = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
+        let slideLeft = UISwipeGestureRecognizer(target: self, action:#selector(EasyViewController.slideBlock(gesture:)))
         slideLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(slideLeft)
-        let slideUp = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
-        slideRight.direction = UISwipeGestureRecognizerDirection.up
+        let slideUp = UISwipeGestureRecognizer(target: self, action:#selector(EasyViewController.slideBlock(gesture:)))
+        slideUp.direction = UISwipeGestureRecognizerDirection.up
         self.view.addGestureRecognizer(slideUp)
-        let slideDown = UISwipeGestureRecognizer(target: self, action: Selector(("slideBlock:")))
-        slideRight.direction = UISwipeGestureRecognizerDirection.down
+        let slideDown = UISwipeGestureRecognizer(target: self, action:#selector(EasyViewController.slideBlock(gesture:)))
+        slideDown.direction = UISwipeGestureRecognizerDirection.down
         self.view.addGestureRecognizer(slideDown)
+        print("Added all getures")
         
     }
     
-    func slideBlock(gesture: UIGestureRecognizer) {
-        
+    func slideBlock(gesture: UIGestureRecognizer)
+    {
+        print("Gesture Detected")
         if let slideGesture = gesture as? UISwipeGestureRecognizer {
-            
-            
+            print("Gesture is a slide")
             switch slideGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
                 print("Swiped right")
@@ -45,6 +46,7 @@ class EasyViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.up:
                 print("Swiped up")
             default:
+                print("other")
                 break
             }
         }

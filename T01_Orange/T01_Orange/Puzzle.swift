@@ -11,7 +11,8 @@ import Foundation
 class Puzzle {
     var p: [String] = []//= ["1","2","3","4","5","6","7","8",""]
     var pieces = Array<Array<String>>()
-    var blankPosition = 8
+    var blankPosition = -1
+    var gridSize = 0
     
     //Corners
     var topLeft = ["up","left"]
@@ -39,24 +40,25 @@ class Puzzle {
     
     
     func Puzzle(size: Int){
+        let gridSize = size
         let total = size^2;
         // midRows = size < THESE < (size^2-size)
         // midRows = count > size && count < ((size^2)-size)
         
         for count in 0...(total - 1){
-            if ((count > size) && (count < ((size^2)-size)) && (count % size == 0)){ //LeftEdge logic
+            if ((count > gridSize) && (count < (total - gridSize)) && (count % gridSize == 0)){ //LeftEdge logic
                 p.append(String(count+1))
                 pieces.append(leftEdge)
                 break
-            }else if ((count > size) && (count < ((size^2)-size)) && (count % size == (size-1))){ //RightEdge logic
+            }else if ((count > gridSize) && (count < (total - gridSize)) && (count % gridSize == (gridSize - 1))){ //RightEdge logic
                 p.append(String(count+1))
                 pieces.append(rightEdge)
                 break
-            }else if ((count > 0) && (count < (size-1))){ //topEdge logic
+            }else if ((count > 0) && (count < (gridSize - 1))){ //topEdge logic
                 p.append(String(count+1))
                 pieces.append(topEdge)
                 break
-            }else if (count > (total - size) && count < (total - 1)){ //botEdge logic
+            }else if (count > (total - gridSize) && count < (total - 1)){ //botEdge logic
                 p.append(String(count+1))
                 pieces.append(botEdge)
                 break
@@ -64,11 +66,11 @@ class Puzzle {
                 p.append(String(count+1))
                 pieces.append(topLeft)
                 break
-            }else if(count == (size-1)){ //topRight logic
+            }else if(count == (gridSize - 1)){ //topRight logic
                 p.append(String(count+1))
                 pieces.append(topRight)
                 break
-            }else if(count == (total - size)){ //botLeft logic
+            }else if(count == (total - gridSize)){ //botLeft logic
                 p.append(String(count+1))
                 pieces.append(botLeft)
                 break
@@ -97,6 +99,13 @@ class Puzzle {
         return output
     }
     
+    func switchTiles(blank: Int,val: Int){
+        p[blank] = p[val]
+        p[val] = ""
+        blankPosition = val
+        
+    }
+    
     //This function will actually accept the gesture recognizer, but I haven't looked at that piece yet.
     func modArray(g: String) {
         switch g {
@@ -104,24 +113,32 @@ class Puzzle {
             if(pieces[blankPosition].contains("up")){
                 //Need to code the changes to the array blank moves opposite of gesture -> down
                 print("Up")
+                //switch the blankposition with the value in below it
+                switchTiles(blank: blankPosition,val: (blankPosition + gridSize))
             }
             break
         case "DOWN":
             if(pieces[blankPosition].contains("down")){
                 //Need to code the changes to the array blank moves opposite of gesture -> up
                 print("Down")
+                //switch the blankposition with the value in above it
+                switchTiles(blank: blankPosition,val: (blankPosition - gridSize))
             }
             break
         case "LEFT":
             if(pieces[blankPosition].contains("left")){
                 //Need to code the changes to the array blank moves opposite of gesture -> right
                 print("Left")
+                //switch the blankposition with the value in below it
+                switchTiles(blank: blankPosition,val: (blankPosition + 1))
             }
             break
         case "Right":
             if(pieces[blankPosition].contains("right")){
                 //Need to code the changes to the array blank moves opposite of gesture -> left
                 print("Right")
+                //switch the blankposition with the value in below it
+                switchTiles(blank: blankPosition,val: (blankPosition - 1))
             }
             break
         default:

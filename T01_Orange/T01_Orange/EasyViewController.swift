@@ -10,6 +10,7 @@ import UIKit
 
 class EasyViewController: UIViewController {
 
+    var puz = Puzzle()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class EasyViewController: UIViewController {
         self.view.addGestureRecognizer(slideDown)
         print("Added all getures")
         
+        puz.Puzzle(size: 3)
+        
+        
     }
     
     func slideBlock(gesture: UIGestureRecognizer)
@@ -39,12 +43,16 @@ class EasyViewController: UIViewController {
             switch slideGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
                 print("Swiped right")
+                puz.modArray(g: "Right")
             case UISwipeGestureRecognizerDirection.down:
                 print("Swiped down")
+                puz.modArray(g: "DOWN")
             case UISwipeGestureRecognizerDirection.left:
                 print("Swiped left")
+                puz.modArray(g: "LEFT")
             case UISwipeGestureRecognizerDirection.up:
                 print("Swiped up")
+                puz.modArray(g: "UP")
             default:
                 print("other")
                 break

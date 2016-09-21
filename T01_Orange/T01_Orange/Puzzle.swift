@@ -38,52 +38,64 @@ class Puzzle {
     // botEdge = size^2 - size < x < size^2 - 1
     // botRight = size^2 - 1
     
+    func printPuzzle(){
+        for item in p {
+            print("[\(item)]")
+        }
+    }
     
-    func Puzzle(size: Int){
+    init(size: Int) {
         let gridSize = size
-        let total = size^2;
+        let tot = pow(Double(size),Double(2))
+        print("Total: \(tot)")
         // midRows = size < THESE < (size^2-size)
         // midRows = count > size && count < ((size^2)-size)
-        
-        for count in 0...(total - 1){
+        var count = 0
+        let total = Int(tot)
+        //for count in 0...(end){
+        while count < total {
+            printPuzzle()
+            print("\(count)")
             if ((count > gridSize) && (count < (total - gridSize)) && (count % gridSize == 0)){ //LeftEdge logic
                 p.append(String(count+1))
                 pieces.append(leftEdge)
-                break
+                print("left edge")
             }else if ((count > gridSize) && (count < (total - gridSize)) && (count % gridSize == (gridSize - 1))){ //RightEdge logic
                 p.append(String(count+1))
                 pieces.append(rightEdge)
-                break
+                print("right edge")
             }else if ((count > 0) && (count < (gridSize - 1))){ //topEdge logic
                 p.append(String(count+1))
                 pieces.append(topEdge)
-                break
+                print("top edge")
             }else if (count > (total - gridSize) && count < (total - 1)){ //botEdge logic
                 p.append(String(count+1))
                 pieces.append(botEdge)
-                break
+                print("bot edge")
             }else if(count == 0){ //topleft logic
                 p.append(String(count+1))
                 pieces.append(topLeft)
-                break
+                print("top left")
             }else if(count == (gridSize - 1)){ //topRight logic
                 p.append(String(count+1))
                 pieces.append(topRight)
-                break
+                print("top right")
             }else if(count == (total - gridSize)){ //botLeft logic
                 p.append(String(count+1))
                 pieces.append(botLeft)
-                break
+                print("bot left")
             }else if(count == (total - 1)){ //botRight logic
                 p.append("")
                 pieces.append(botRight)
-                break
+                print("bot right")
             }else {
                 p.append(String(count+1))
                 pieces.append(mid)
-                break
+                print("mid")
             }
+            count += 1
         }
+        blankPosition = (total - 1)
         print("Values in p are:")
         for value in p{
             print(value)
@@ -103,7 +115,7 @@ class Puzzle {
         p[blank] = p[val]
         p[val] = ""
         blankPosition = val
-        
+        printPuzzle()
     }
     
     //This function will actually accept the gesture recognizer, but I haven't looked at that piece yet.

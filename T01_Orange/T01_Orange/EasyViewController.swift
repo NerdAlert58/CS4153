@@ -10,7 +10,7 @@ import UIKit
 
 class EasyViewController: UIViewController {
 
-    var puz = Puzzle()
+    var puz = Puzzle(size: 3)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class EasyViewController: UIViewController {
         self.view.addGestureRecognizer(slideDown)
         print("Added all getures")
         
-        puz.Puzzle(size: 3)
+        //puz.Puzzle(size: 3)
         
         
     }

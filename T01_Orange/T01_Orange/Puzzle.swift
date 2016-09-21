@@ -10,6 +10,7 @@ import Foundation
 
 class Puzzle {
     var p: [String] = []//= ["1","2","3","4","5","6","7","8",""]
+    var sorted: [String] = []
     var pieces = Array<Array<String>>()
     var blankPosition = -1
     var gridSize = 0
@@ -45,7 +46,7 @@ class Puzzle {
     }
     
     init(size: Int) {
-        let gridSize = size
+        gridSize = size
         let tot = pow(Double(size),Double(2))
         print("Total: \(tot)")
         // midRows = size < THESE < (size^2-size)
@@ -54,9 +55,8 @@ class Puzzle {
         let total = Int(tot)
         //for count in 0...(end){
         while count < total {
-            printPuzzle()
             print("\(count)")
-            if ((count > gridSize) && (count < (total - gridSize)) && (count % gridSize == 0)){ //LeftEdge logic
+            if ((count >= gridSize) && (count < (total - gridSize)) && (count % gridSize == 0)){ //LeftEdge logic
                 p.append(String(count+1))
                 pieces.append(leftEdge)
                 print("left edge")
@@ -104,6 +104,7 @@ class Puzzle {
         for value in pieces{
             print(value)
         }
+        sorted = p
     }
     
     func scramble(input: [String]) -> [String]{
@@ -115,7 +116,19 @@ class Puzzle {
         p[blank] = p[val]
         p[val] = ""
         blankPosition = val
-        printPuzzle()
+    }
+    
+    func isFinished() -> Bool {
+        // Check each item in the Array and verify order
+        if p == sorted {
+            return true
+        }else {
+            return false
+        }
+    }
+    
+    func toString(number: Int) -> String {
+        return p[number]
     }
     
     //This function will actually accept the gesture recognizer, but I haven't looked at that piece yet.
@@ -145,7 +158,7 @@ class Puzzle {
                 switchTiles(blank: blankPosition,val: (blankPosition + 1))
             }
             break
-        case "Right":
+        case "RIGHT":
             if(pieces[blankPosition].contains("right")){
                 //Need to code the changes to the array blank moves opposite of gesture -> left
                 print("Right")

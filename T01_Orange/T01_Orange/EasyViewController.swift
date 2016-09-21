@@ -10,7 +10,7 @@ import UIKit
 
 class EasyViewController: UIViewController {
 
-    var puz = Puzzle(size: 3)
+    var puz = Puzzle(size: 4)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,20 +43,47 @@ class EasyViewController: UIViewController {
             switch slideGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
                 print("Swiped right")
-                puz.modArray(g: "Right")
+                puz.modArray(g: "RIGHT")
+                display(numb: 2)
             case UISwipeGestureRecognizerDirection.down:
                 print("Swiped down")
                 puz.modArray(g: "DOWN")
+                display(numb: 2)
             case UISwipeGestureRecognizerDirection.left:
                 print("Swiped left")
                 puz.modArray(g: "LEFT")
+                display(numb: 2)
             case UISwipeGestureRecognizerDirection.up:
                 print("Swiped up")
                 puz.modArray(g: "UP")
+                display(numb: 2)
             default:
                 print("other")
                 break
             }
+        }
+    }
+    
+//    func display(){
+//        puz.printPuzzle()
+//    }
+    
+    func display(numb: Int){
+        switch numb {
+        case 1:
+            print("[\(puz.toString(number: 0))][\(puz.toString(number: 1))][\(puz.toString(number: 2))]")
+            print("[\(puz.toString(number: 3))][\(puz.toString(number: 4))][\(puz.toString(number: 5))]")
+            print("[\(puz.toString(number: 6))][\(puz.toString(number: 7))][\(puz.toString(number: 8))]")
+            break
+        case 2:
+            print("[\(puz.toString(number: 0))][\(puz.toString(number: 1))][\(puz.toString(number: 2))][\(puz.toString(number: 3))]")
+            print("[\(puz.toString(number: 4))][\(puz.toString(number: 5))][\(puz.toString(number: 6))][\(puz.toString(number: 7))]")
+            print("[\(puz.toString(number: 8))][\(puz.toString(number: 9))][\(puz.toString(number: 10))][\(puz.toString(number: 11))]")
+            print("[\(puz.toString(number: 12))][\(puz.toString(number: 13))][\(puz.toString(number: 14))][\(puz.toString(number: 15))]")
+            break
+        default:
+            puz.printPuzzle()
+            break
         }
     }
 

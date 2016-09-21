@@ -11,7 +11,13 @@ import UIKit
 class LevelsViewController: UIViewController {
 
     @IBOutlet weak var btnEasy: UIButton!
+
+    
+    
+    
     @IBOutlet weak var btnMedium: UIButton!
+    
+    
     @IBOutlet weak var btnHard: UIButton!
     
     override func viewDidLoad() {

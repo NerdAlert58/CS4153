@@ -12,8 +12,43 @@ class MediumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        let slideRight = UISwipeGestureRecognizer(target: self, action:#selector(MediumViewController.slideBlock(gesture:)))
+        slideRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(slideRight)
+        let slideLeft = UISwipeGestureRecognizer(target: self, action:#selector(MediumViewController.slideBlock(gesture:)))
+        slideLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(slideLeft)
+        let slideUp = UISwipeGestureRecognizer(target: self, action:#selector(MediumViewController.slideBlock(gesture:)))
+        slideUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(slideUp)
+        let slideDown = UISwipeGestureRecognizer(target: self, action:#selector(MediumViewController.slideBlock(gesture:)))
+        slideDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(slideDown)
+        print("Added all getures")
+        
+    }
+    
+    func slideBlock(gesture: UIGestureRecognizer)
+    {
+        print("Gesture Detected")
+        if let slideGesture = gesture as? UISwipeGestureRecognizer {
+            print("Gesture is a slide")
+            switch slideGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+            case UISwipeGestureRecognizerDirection.down:
+                print("Swiped down")
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+            default:
+                print("other")
+                break
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

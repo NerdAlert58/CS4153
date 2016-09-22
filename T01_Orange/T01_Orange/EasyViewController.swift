@@ -11,6 +11,7 @@ import UIKit
 class EasyViewController: UIViewController {
 
     var puz = Puzzle(size: 4)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class EasyViewController: UIViewController {
         let slideDown = UISwipeGestureRecognizer(target: self, action:#selector(EasyViewController.slideBlock(gesture:)))
         slideDown.direction = UISwipeGestureRecognizerDirection.down
         self.view.addGestureRecognizer(slideDown)
-        print("Added all getures")
+        print("Added all gestures")
         
         //puz.Puzzle(size: 3)
         

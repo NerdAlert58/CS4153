@@ -50,22 +50,34 @@ class EasyViewController: UIViewController {
         print("tile is \(wtile) X \(htile)")
         print("wline is \(wline)")
         
-        let imageName = "gray.png"
-        let image = UIImage(named: imageName)
+        let imageback = "gray.png"
+        let image = UIImage(named: imageback)
+        let imagetile = "tile.png"
+        let imageT = UIImage(named: imagetile)
         
         var xVar = 3
         var yVar = 100
+        var it = 0
         for i in 0..<puz.gridSize {
             for j in 0..<puz.gridSize{
+                if (puz.p[it] == "") {
                 let myImageView = UIImageView(image: image!)
                 myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
-                //myImageView.isUserInteractionEnabled = true
-                self.view.addSubview(myImageView)
+                    self.view.addSubview(myImageView)
+                } else {
+                    let myImageView = UIImageView(image: imageT!)
+                    myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+                    self.view.addSubview(myImageView)
+                }
                 xVar = xVar+wtile+wline
+                it += 1
             }
             xVar = 3
             yVar = yVar+htile+wline
         }
+        
+        
+        
     }
     
     func slideBlock(gesture: UIGestureRecognizer)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameplayKit
 
 class EasyViewController: UIViewController {
 
@@ -61,8 +62,8 @@ class EasyViewController: UIViewController {
         for i in 0..<puz.gridSize {
             for j in 0..<puz.gridSize{
                 if (puz.p[it] == "") {
-                let myImageView = UIImageView(image: image!)
-                myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+                    let myImageView = UIImageView(image: image!)
+                    myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
                     self.view.addSubview(myImageView)
                 } else {
                     let myImageView = UIImageView(image: imageT!)

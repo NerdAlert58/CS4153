@@ -7,6 +7,19 @@
 //
 
 import Foundation
+import GameplayKit
+
+extension Array {
+    mutating func scramble() {
+        if count < 2 { return }
+        for i in 0..<(count - 1) {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            if (i != j) {
+                swap(&self[i], &self[j])
+            }
+        }
+    }
+}
 
 class Puzzle {
     var p: [String] = []//= ["1","2","3","4","5","6","7","8",""]
@@ -14,6 +27,11 @@ class Puzzle {
     var pieces = Array<Array<String>>()
     var blankPosition = -1
     var gridSize = 0
+    var total = 0
+
+//    var randomImage: [UIImageView] = []
+//    var isImagePuzzle: Bool = true
+//    var imageArray = [#imageLiteral(resourceName: "pp1.jpeg"),#imageLiteral(resourceName: "pp2.jpeg"),#imageLiteral(resourceName: "pp3.jpeg"),#imageLiteral(resourceName: "pp4.jpeg"),#imageLiteral(resourceName: "pp5.jpeg"),#imageLiteral(resourceName: "pp6.jpeg"),#imageLiteral(resourceName: "pp7.jpeg"),#imageLiteral(resourceName: "pp8.jpeg"),#imageLiteral(resourceName: "gray.png")]
     
     //Corners
     var topLeft = ["up","left"]
@@ -45,6 +63,15 @@ class Puzzle {
         }
     }
     
+    func shuffle(){
+        p.scramble()
+        for i in 0..<total {
+            if p[i] == "" {
+                blankPosition = i
+            }
+        }
+    }
+    
     init(size: Int) {
         gridSize = size
         let tot = pow(Double(size),Double(2))
@@ -52,7 +79,7 @@ class Puzzle {
         // midRows = size < THESE < (size^2-size)
         // midRows = count > size && count < ((size^2)-size)
         var count = 0
-        let total = Int(tot)
+        total = Int(tot)
         //for count in 0...(end){
         while count < total {
             print("\(count)")
@@ -105,11 +132,6 @@ class Puzzle {
             print(value)
         }
         sorted = p
-    }
-    
-    func scramble(input: [String]) -> [String]{
-        let output: [String] = input
-        return output
     }
     
     func switchTiles(blank: Int,val: Int){

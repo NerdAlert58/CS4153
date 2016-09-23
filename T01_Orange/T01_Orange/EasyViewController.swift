@@ -11,13 +11,16 @@ import GameplayKit
 
 class EasyViewController: UIViewController {
 
+    var randomImage: [String] = []
     var puz = Puzzle(size: 3)
-    var imageArray = [#imageLiteral(resourceName: "pp1.jpeg"),#imageLiteral(resourceName: "pp2.jpeg"),#imageLiteral(resourceName: "pp3.jpeg"),#imageLiteral(resourceName: "pp4.jpeg"),#imageLiteral(resourceName: "pp5.jpeg"),#imageLiteral(resourceName: "pp6.jpeg"),#imageLiteral(resourceName: "pp7.jpeg"),#imageLiteral(resourceName: "pp8.jpeg"),#imageLiteral(resourceName: "gray.png")]
-    var randomImage = []
+    var imageArray: [String] = ["pp1.jpeg","pp2.jpeg","pp3.jpeg","pp4.jpeg","pp5.jpeg","pp6.jpeg","pp7.jpeg","pp8.jpeg"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        display()
+        puz.shuffle()
+        display()
         // Do any additional setup after loading the view.
         let slideRight = UISwipeGestureRecognizer(target: self, action:#selector(EasyViewController.slideBlock(gesture:)))
         slideRight.direction = UISwipeGestureRecognizerDirection.right
@@ -34,7 +37,7 @@ class EasyViewController: UIViewController {
         print("Added all gestures")
         
         //puz.Puzzle(size: 3)
-        randomImage = GKRandomSource().arrayByShufflingObjects(in: imageArray)
+        //randomImage = GKRandomSource().arrayByShufflingObjects(in: imageArray as [String])
         display(numb: 1)
     }
     
@@ -67,9 +70,10 @@ class EasyViewController: UIViewController {
                     myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
                     self.view.addSubview(myImageView)
                 } else {*/
-                let myImageView = UIImageView(image: randomImage[it] as? UIImage)
-                myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
-                self.view.addSubview(myImageView)
+//                let thisImage = UIImage(named: randomImage[it] as! String)
+//                let myImageView = UIImageView(image: thisImage)
+//                myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+//                self.view.addSubview(myImageView)
                 //}
                 xVar = xVar+wtile+wline
                 it += 1
@@ -77,9 +81,13 @@ class EasyViewController: UIViewController {
             xVar = 3
             yVar = yVar+htile+wline
         }
-        
-        
-        
+    }
+    
+    func switchTiles(blank: Int,val: Int){
+        //swap(randomImage[blank], randomImage[val])
+        randomImage[blank] = randomImage[val]
+        randomImage[val] = "gray.png"
+        //blankPosition = val
     }
     
     func slideBlock(gesture: UIGestureRecognizer)

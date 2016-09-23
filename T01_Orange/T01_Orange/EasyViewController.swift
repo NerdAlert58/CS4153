@@ -33,18 +33,39 @@ class EasyViewController: UIViewController {
         
         //puz.Puzzle(size: 3)
         
-        display()
+        display(numb: 1)
     }
     
     func display() {
+        //Window width
         let winw = self.view.frame.size.width
+        //number of lines between tiles in puzzle
         let numlines = puz.gridSize - 1
+        //line in between each tile width
         let wline = 10 / numlines
+        //width and height of tiles
         let wtile = ((Int(winw) - (wline * puz.gridSize))) / puz.gridSize
         let htile = wtile
         print("winw is \(winw)")
         print("tile is \(wtile) X \(htile)")
         print("wline is \(wline)")
+        
+        let imageName = "tile.png"
+        let image = UIImage(named: imageName)
+        
+        var xVar = 3
+        var yVar = 100
+        for i in 0..<puz.gridSize {
+            for j in 0..<puz.gridSize{
+                let myImageView = UIImageView(image: image!)
+                myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+                //myImageView.isUserInteractionEnabled = true
+                self.view.addSubview(myImageView)
+                xVar = xVar+wtile+wline
+            }
+            xVar = 3
+            yVar = yVar+htile+wline
+        }
     }
     
     func slideBlock(gesture: UIGestureRecognizer)
@@ -93,6 +114,7 @@ class EasyViewController: UIViewController {
             puz.printPuzzle()
             break
         }
+        display()
     }
 
     override func didReceiveMemoryWarning() {

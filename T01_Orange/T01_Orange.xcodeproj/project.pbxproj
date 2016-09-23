@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		2F3855891D8F145600F0FC99 /* EasyGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3855881D8F145600F0FC99 /* EasyGameView.swift */; };
 		2F6571951D94BF8F0096AFCE /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6571941D94BF8F0096AFCE /* tile.png */; };
+		2F65719E1D94D2360096AFCE /* pp1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F6571961D94D2360096AFCE /* pp1.jpeg */; };
+		2F65719F1D94D2360096AFCE /* pp2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F6571971D94D2360096AFCE /* pp2.jpeg */; };
+		2F6571A01D94D2360096AFCE /* pp3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F6571981D94D2360096AFCE /* pp3.jpeg */; };
+		2F6571A11D94D2360096AFCE /* pp4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F6571991D94D2360096AFCE /* pp4.jpeg */; };
+		2F6571A21D94D2360096AFCE /* pp5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F65719A1D94D2360096AFCE /* pp5.jpeg */; };
+		2F6571A31D94D2360096AFCE /* pp6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F65719B1D94D2360096AFCE /* pp6.jpeg */; };
+		2F6571A41D94D2360096AFCE /* pp7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F65719C1D94D2360096AFCE /* pp7.jpeg */; };
+		2F6571A51D94D2360096AFCE /* pp8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F65719D1D94D2360096AFCE /* pp8.jpeg */; };
 		485694111D88BE3800A7219D /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485694101D88BE3800A7219D /* LevelsViewController.swift */; };
 		485694131D88BFA100A7219D /* EasyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485694121D88BFA100A7219D /* EasyViewController.swift */; };
 		485694151D88BFE500A7219D /* MediumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485694141D88BFE500A7219D /* MediumViewController.swift */; };
@@ -57,6 +65,14 @@
 /* Begin PBXFileReference section */
 		2F3855881D8F145600F0FC99 /* EasyGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyGameView.swift; sourceTree = "<group>"; };
 		2F6571941D94BF8F0096AFCE /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
+		2F6571961D94D2360096AFCE /* pp1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp1.jpeg; sourceTree = "<group>"; };
+		2F6571971D94D2360096AFCE /* pp2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp2.jpeg; sourceTree = "<group>"; };
+		2F6571981D94D2360096AFCE /* pp3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp3.jpeg; sourceTree = "<group>"; };
+		2F6571991D94D2360096AFCE /* pp4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp4.jpeg; sourceTree = "<group>"; };
+		2F65719A1D94D2360096AFCE /* pp5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp5.jpeg; sourceTree = "<group>"; };
+		2F65719B1D94D2360096AFCE /* pp6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp6.jpeg; sourceTree = "<group>"; };
+		2F65719C1D94D2360096AFCE /* pp7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp7.jpeg; sourceTree = "<group>"; };
+		2F65719D1D94D2360096AFCE /* pp8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp8.jpeg; sourceTree = "<group>"; };
 		485694101D88BE3800A7219D /* LevelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		485694121D88BFA100A7219D /* EasyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyViewController.swift; sourceTree = "<group>"; };
 		485694141D88BFE500A7219D /* MediumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +208,14 @@
 				48AAB3961D8ED6A9009268F0 /* Splash.png */,
 				2F6571941D94BF8F0096AFCE /* tile.png */,
 				48F9EEA81D94CAA500DEA4AC /* gray.png */,
+				2F6571961D94D2360096AFCE /* pp1.jpeg */,
+				2F6571971D94D2360096AFCE /* pp2.jpeg */,
+				2F6571981D94D2360096AFCE /* pp3.jpeg */,
+				2F6571991D94D2360096AFCE /* pp4.jpeg */,
+				2F65719A1D94D2360096AFCE /* pp5.jpeg */,
+				2F65719B1D94D2360096AFCE /* pp6.jpeg */,
+				2F65719C1D94D2360096AFCE /* pp7.jpeg */,
+				2F65719D1D94D2360096AFCE /* pp8.jpeg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -307,19 +331,27 @@
 				A0BA2E821D8F86CB0042827F /* unpressed-Easy.png in Resources */,
 				A0BA2E831D8F86CB0042827F /* unpressed-Hard.png in Resources */,
 				48AAB3971D8ED6A9009268F0 /* Splash.png in Resources */,
+				2F65719F1D94D2360096AFCE /* pp2.jpeg in Resources */,
+				2F6571A51D94D2360096AFCE /* pp8.jpeg in Resources */,
+				2F6571A11D94D2360096AFCE /* pp4.jpeg in Resources */,
 				48AAB39D1D8EDC65009268F0 /* Splash2.png in Resources */,
 				A0BA2E871D91A34C0042827F /* pressed-Start.png in Resources */,
 				48F9EEA91D94CAA500DEA4AC /* gray.png in Resources */,
+				2F6571A31D94D2360096AFCE /* pp6.jpeg in Resources */,
 				A0BA2E881D91A34C0042827F /* unpressed-Start.png in Resources */,
+				2F6571A41D94D2360096AFCE /* pp7.jpeg in Resources */,
 				48AAB3A01D8EDF0A009268F0 /* Start.png in Resources */,
 				4867C2A21D86159D0090E335 /* LaunchScreen.storyboard in Resources */,
 				2F6571951D94BF8F0096AFCE /* tile.png in Resources */,
 				A0BA2E811D8F86CB0042827F /* pressed-Medium.png in Resources */,
 				48AAB3A11D8EDF0A009268F0 /* Start2.png in Resources */,
 				A0BA2E841D8F86CB0042827F /* unpressed-Medium.png in Resources */,
+				2F6571A01D94D2360096AFCE /* pp3.jpeg in Resources */,
 				A0BA2E801D8F86CB0042827F /* pressed-Hard.png in Resources */,
 				4867C29F1D86159D0090E335 /* Assets.xcassets in Resources */,
 				4867C29D1D86159D0090E335 /* Main.storyboard in Resources */,
+				2F65719E1D94D2360096AFCE /* pp1.jpeg in Resources */,
+				2F6571A21D94D2360096AFCE /* pp5.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,8 @@ import GameplayKit
 class EasyViewController: UIViewController {
 
     var puz = Puzzle(size: 3)
-    
+    var imageArray = [#imageLiteral(resourceName: "pp1.jpeg"),#imageLiteral(resourceName: "pp2.jpeg"),#imageLiteral(resourceName: "pp3.jpeg"),#imageLiteral(resourceName: "pp4.jpeg"),#imageLiteral(resourceName: "pp5.jpeg"),#imageLiteral(resourceName: "pp6.jpeg"),#imageLiteral(resourceName: "pp7.jpeg"),#imageLiteral(resourceName: "pp8.jpeg"),#imageLiteral(resourceName: "gray.png")]
+    var randomImage = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class EasyViewController: UIViewController {
         print("Added all gestures")
         
         //puz.Puzzle(size: 3)
-        
+        randomImage = GKRandomSource().arrayByShufflingObjects(in: imageArray)
         display(numb: 1)
     }
     
@@ -59,17 +60,17 @@ class EasyViewController: UIViewController {
         var xVar = 3
         var yVar = 100
         var it = 0
-        for i in 0..<puz.gridSize {
-            for j in 0..<puz.gridSize{
-                if (puz.p[it] == "") {
+        for _ in 0..<puz.gridSize {
+            for _ in 0..<puz.gridSize{
+                /*if (puz.p[it] == "") {
                     let myImageView = UIImageView(image: image!)
                     myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
                     self.view.addSubview(myImageView)
-                } else {
-                    let myImageView = UIImageView(image: imageT!)
-                    myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
-                    self.view.addSubview(myImageView)
-                }
+                } else {*/
+                let myImageView = UIImageView(image: randomImage[it] as? UIImage)
+                myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+                self.view.addSubview(myImageView)
+                //}
                 xVar = xVar+wtile+wline
                 it += 1
             }

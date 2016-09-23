@@ -40,11 +40,11 @@ class EasyViewController: UIViewController {
         let winw = self.view.frame.size.width
         let numlines = puz.gridSize - 1
         let wline = 10 / numlines
-        let wtile = (Int(winw) / puz.gridSize)
+        let wtile = ((Int(winw) - (wline * puz.gridSize))) / puz.gridSize
         let htile = wtile
         print("winw is \(winw)")
-        print("tile is \(wtile)")
-        print("tile is \(htile)")
+        print("tile is \(wtile) X \(htile)")
+        print("wline is \(wline)")
     }
     
     func slideBlock(gesture: UIGestureRecognizer)

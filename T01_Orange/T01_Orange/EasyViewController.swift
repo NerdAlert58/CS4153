@@ -33,7 +33,18 @@ class EasyViewController: UIViewController {
         
         //puz.Puzzle(size: 3)
         
-        
+        display()
+    }
+    
+    func display() {
+        let winw = self.view.frame.size.width
+        let numlines = puz.gridSize - 1
+        let wline = 10 / numlines
+        let wtile = (Int(winw) / puz.gridSize)
+        let htile = wtile
+        print("winw is \(winw)")
+        print("tile is \(wtile)")
+        print("tile is \(htile)")
     }
     
     func slideBlock(gesture: UIGestureRecognizer)
@@ -64,10 +75,6 @@ class EasyViewController: UIViewController {
             }
         }
     }
-    
-//    func display(){
-//        puz.printPuzzle()
-//    }
     
     func display(numb: Int){
         switch numb {

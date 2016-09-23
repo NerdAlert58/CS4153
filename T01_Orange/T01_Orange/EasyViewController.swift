@@ -10,7 +10,7 @@ import UIKit
 
 class EasyViewController: UIViewController {
 
-    var puz = Puzzle(size: 4)
+    var puz = Puzzle(size: 3)
     
 
     override func viewDidLoad() {
@@ -56,19 +56,19 @@ class EasyViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.right:
                 print("Swiped right")
                 puz.modArray(g: "RIGHT")
-                display(numb: 2)
+                display(numb: 1)
             case UISwipeGestureRecognizerDirection.down:
                 print("Swiped down")
                 puz.modArray(g: "DOWN")
-                display(numb: 2)
+                display(numb: 1)
             case UISwipeGestureRecognizerDirection.left:
                 print("Swiped left")
                 puz.modArray(g: "LEFT")
-                display(numb: 2)
+                display(numb: 1)
             case UISwipeGestureRecognizerDirection.up:
                 print("Swiped up")
                 puz.modArray(g: "UP")
-                display(numb: 2)
+                display(numb: 1)
             default:
                 print("other")
                 break

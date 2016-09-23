@@ -50,7 +50,7 @@ class EasyViewController: UIViewController {
         print("tile is \(wtile) X \(htile)")
         print("wline is \(wline)")
         
-        let imageName = "tile.png"
+        let imageName = "gray.png"
         let image = UIImage(named: imageName)
         
         var xVar = 3

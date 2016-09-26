@@ -47,10 +47,6 @@ class EasyViewController: UIViewController {
     
     
     func display() {
-        var index = [Int]()
-        for n in 0..<puz.p.count {
-            index.append(puz.p[n])
-        }
         //Window width
         let winw = self.view.frame.size.width
         //number of lines between tiles in puzzle
@@ -69,11 +65,6 @@ class EasyViewController: UIViewController {
         var xVar = 3
         var yVar = 100
         var it = 0
-
-        for n in 0..<puz.p.count {
-            print("[\(index[n])]")
-            
-        }
         
         for _ in 0..<puz.gridSize {
             for _ in 0..<puz.gridSize {
@@ -82,7 +73,7 @@ class EasyViewController: UIViewController {
                     myEmptyTile.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
                     self.view.addSubview(myEmptyTile)
                 }else {
-                    let thisImage = UIImage(named: "pp\(index[it]).jpeg")
+                    let thisImage = UIImage(named: "pp\(puz.p[it]).jpeg")
                     let myTileImage = UIImageView(image: thisImage)
                     myTileImage.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
                     self.view.addSubview(myTileImage)

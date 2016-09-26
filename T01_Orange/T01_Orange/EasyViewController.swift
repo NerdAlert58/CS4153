@@ -140,6 +140,7 @@ class EasyViewController: UIViewController {
                     //puz.blankPosition = puz.total + 1
                     finished = true
                     print("The new blank position is: \(puz.blankPosition)")
+                    movesLabel.text = "Moves: \(puz.moves)"
                     finishedLabel.isHidden = false
                     display()
                     

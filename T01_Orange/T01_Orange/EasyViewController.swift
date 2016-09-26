@@ -15,6 +15,7 @@ class EasyViewController: UIViewController {
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var finishedLabel: UILabel!
     var randomImage: [String] = ["pp1.jpeg"]
+    var finished = false
     
     
     var puz = Puzzle(size: 3)
@@ -86,6 +87,16 @@ class EasyViewController: UIViewController {
                 yVar = yVar+htile+wline
                 xVar = 3
             }
+        if(finished){
+            xVar = 3
+            xVar = xVar + (puz.gridSize - 1)*(wtile+wline)
+            yVar = 100
+            yVar = yVar + (puz.gridSize - 1)*(htile+wline)
+            let thisImage = UIImage(named: "pp\(puz.total).jpeg")
+            let myTileImage = UIImageView(image: thisImage)
+            myTileImage.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+            self.view.addSubview(myTileImage)
+        }
         
         print("sorted index array ")
     }
@@ -126,9 +137,12 @@ class EasyViewController: UIViewController {
             if(puz.blankPosition == (puz.total - 1)){
                 if(puz.isFinished()){
                     //Yea!
-                    puz.blankPosition = puz.total
-                    finishedLabel.hidden = false
+                    //puz.blankPosition = puz.total + 1
+                    finished = true
+                    print("The new blank position is: \(puz.blankPosition)")
+                    finishedLabel.isHidden = false
                     display()
+                    
                 }
             }
         }

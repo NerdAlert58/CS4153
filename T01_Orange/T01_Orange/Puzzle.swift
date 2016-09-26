@@ -72,7 +72,7 @@ class Puzzle {
         var left = 0
         var right = 0
         
-        for _ in 0...1000{
+        for _ in 0...5{
             let randir = Int(arc4random_uniform(4) + 1)
             switch (randir){
             case 1:

@@ -22,8 +22,8 @@ extension Array {
 }
 
 class Puzzle {
-    var p: [String] = []//= ["1","2","3","4","5","6","7","8",""]
-    var sorted: [String] = []
+    var p: [Int] = []// ["1","2","3","4","5","6","7","8",""]
+    var sorted: [Int] = []
     var pieces = Array<Array<String>>()
     var blankPosition = -1
     var gridSize = 0
@@ -66,7 +66,7 @@ class Puzzle {
     func shuffle(){
         p.scramble()
         for i in 0..<total {
-            if p[i] == "" {
+            if p[i] == -1 {
                 blankPosition = i
             }
         }
@@ -84,39 +84,39 @@ class Puzzle {
         while count < total {
             print("\(count)")
             if ((count >= gridSize) && (count < (total - gridSize)) && (count % gridSize == 0)){ //LeftEdge logic
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(leftEdge)
                 print("left edge")
             }else if ((count > gridSize) && (count < (total - gridSize)) && (count % gridSize == (gridSize - 1))){ //RightEdge logic
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(rightEdge)
                 print("right edge")
             }else if ((count > 0) && (count < (gridSize - 1))){ //topEdge logic
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(topEdge)
                 print("top edge")
             }else if (count > (total - gridSize) && count < (total - 1)){ //botEdge logic
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(botEdge)
                 print("bot edge")
             }else if(count == 0){ //topleft logic
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(topLeft)
                 print("top left")
             }else if(count == (gridSize - 1)){ //topRight logic
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(topRight)
                 print("top right")
             }else if(count == (total - gridSize)){ //botLeft logic
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(botLeft)
                 print("bot left")
             }else if(count == (total - 1)){ //botRight logic
-                p.append("")
+                p.append(-1)
                 pieces.append(botRight)
                 print("bot right")
             }else {
-                p.append(String(count+1))
+                p.append(count+1)
                 pieces.append(mid)
                 print("mid")
             }
@@ -136,7 +136,7 @@ class Puzzle {
     
     func switchTiles(blank: Int,val: Int){
         p[blank] = p[val]
-        p[val] = ""
+        p[val] = -1
         blankPosition = val
     }
     
@@ -149,7 +149,7 @@ class Puzzle {
         }
     }
     
-    func toString(number: Int) -> String {
+    func toString(number: Int) -> Int {
         return p[number]
     }
     

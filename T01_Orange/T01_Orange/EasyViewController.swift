@@ -9,16 +9,19 @@
 import UIKit
 import GameplayKit
 
+
 class EasyViewController: UIViewController {
 
-    var randomImage: [String] = []
+    var randomImage: [String] = ["pp1.jpeg"]
+    
+    
     var puz = Puzzle(size: 3)
     var imageArray: [String] = ["pp1.jpeg","pp2.jpeg","pp3.jpeg","pp4.jpeg","pp5.jpeg","pp6.jpeg","pp7.jpeg","pp8.jpeg"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        display()
+//        display()
         puz.shuffle()
         display()
         // Do any additional setup after loading the view.
@@ -41,7 +44,13 @@ class EasyViewController: UIViewController {
         display(numb: 1)
     }
     
+    
+    
     func display() {
+        var index = [Int]()
+        for n in 0..<puz.p.count {
+            index.append(puz.p[n])
+        }
         //Window width
         let winw = self.view.frame.size.width
         //number of lines between tiles in puzzle
@@ -57,30 +66,35 @@ class EasyViewController: UIViewController {
         
         let imageback = "gray.png"
         let image = UIImage(named: imageback)
-        let imagetile = "tile.png"
-        let imageT = UIImage(named: imagetile)
-        
         var xVar = 3
         var yVar = 100
         var it = 0
-        for _ in 0..<puz.gridSize {
-            for _ in 0..<puz.gridSize{
-                /*if (puz.p[it] == "") {
-                    let myImageView = UIImageView(image: image!)
-                    myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
-                    self.view.addSubview(myImageView)
-                } else {*/
-//                let thisImage = UIImage(named: randomImage[it] as! String)
-//                let myImageView = UIImageView(image: thisImage)
-//                myImageView.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
-//                self.view.addSubview(myImageView)
-                //}
-                xVar = xVar+wtile+wline
-                it += 1
-            }
-            xVar = 3
-            yVar = yVar+htile+wline
+
+        for n in 0..<puz.p.count {
+            print("[\(index[n])]")
+            
         }
+        
+        for _ in 0..<puz.gridSize {
+            for _ in 0..<puz.gridSize {
+                if (puz.p[it] == -1) {
+                    let myEmptyTile = UIImageView(image: image)
+                    myEmptyTile.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+                    self.view.addSubview(myEmptyTile)
+                }else {
+                    let thisImage = UIImage(named: "pp\(index[it]).jpeg")
+                    let myTileImage = UIImageView(image: thisImage)
+                    myTileImage.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
+                    self.view.addSubview(myTileImage)
+                }
+                it += 1
+                xVar = xVar+wtile+wline
+            }
+                yVar = yVar+htile+wline
+                xVar = 3
+            }
+        
+        print("sorted index array ")
     }
     
     func switchTiles(blank: Int,val: Int){
@@ -154,5 +168,4 @@ class EasyViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

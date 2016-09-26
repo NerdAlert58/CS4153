@@ -54,6 +54,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-9s-BWf">
                                 <frame key="frameInset" minX="111" minY="125" width="193" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" image="unpressed-Easy.png" backgroundImage="pressed-Easy.png"/>
                                 <state key="highlighted" image="pressed-Easy.png"/>
                                 <connections>
@@ -99,7 +100,7 @@
                         <viewControllerLayoutGuide type="top" id="o9s-Lm-if8"/>
                         <viewControllerLayoutGuide type="bottom" id="VMF-HT-zEN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sSC-X0-YWY">
+                    <view key="view" contentMode="scaleToFill" id="sSC-X0-YWY" customClass="EasyGameView" customModule="T01_Orange" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1554649079" green="0.14940237479999999" blue="0.26704844830000002" alpha="1" colorSpace="calibratedRGB"/>

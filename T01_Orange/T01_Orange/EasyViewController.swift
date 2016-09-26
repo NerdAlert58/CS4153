@@ -12,6 +12,8 @@ import GameplayKit
 
 class EasyViewController: UIViewController {
 
+    @IBOutlet weak var movesLabel: UILabel!
+    @IBOutlet weak var finishedLabel: UILabel!
     var randomImage: [String] = ["pp1.jpeg"]
     
     

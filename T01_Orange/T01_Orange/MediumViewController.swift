@@ -10,6 +10,8 @@ import UIKit
 
 class MediumViewController: UIViewController {
 
+    @IBOutlet weak var movesLabel: UILabel!
+    @IBOutlet weak var finishedLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         

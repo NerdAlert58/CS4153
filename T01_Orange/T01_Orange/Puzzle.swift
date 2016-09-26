@@ -11,13 +11,15 @@ import GameplayKit
 
 extension Array {
     mutating func scramble() {
-        if count < 2 { return }
+/*        if count < 2 { return }
         for i in 0..<(count - 1) {
             let j = Int(arc4random_uniform(UInt32(count - i))) + i
             if (i != j) {
                 swap(&self[i], &self[j])
             }
-        }
+        }*/
+        
+        
     }
 }
 
@@ -28,6 +30,7 @@ class Puzzle {
     var blankPosition = -1
     var gridSize = 0
     var total = 0
+    var moves = 0
 
 //    var randomImage: [UIImageView] = []
 //    var isImagePuzzle: Bool = true
@@ -64,12 +67,42 @@ class Puzzle {
     }
     
     func shuffle(){
-        p.scramble()
+        var up = 0
+        var down = 0
+        var left = 0
+        var right = 0
+        
+        for _ in 0...1000{
+            let randir = Int(arc4random_uniform(4) + 1)
+            switch (randir){
+            case 1:
+                modArray(g: "UP")
+                up += 1
+                break
+            case 2:
+                modArray(g: "DOWN")
+                down += 1
+                break
+            case 3:
+                modArray(g: "LEFT")
+                left += 1
+                break
+            case 4:
+                modArray(g: "RIGHT")
+                right += 1
+                break
+            default:
+                print("Shuffle method reached default.  SHOULDN'T be possible!")
+                break
+            }
+        }
         for i in 0..<total {
             if p[i] == -1 {
                 blankPosition = i
             }
         }
+        moves = 0
+        print("Random values counted = \(up),\(down),\(left),\(right)")
     }
     
     init(size: Int) {
@@ -162,6 +195,7 @@ class Puzzle {
                 print("Up")
                 //switch the blankposition with the value in below it
                 switchTiles(blank: blankPosition,val: (blankPosition + gridSize))
+                moves += 1
             }
             break
         case "DOWN":
@@ -170,6 +204,7 @@ class Puzzle {
                 print("Down")
                 //switch the blankposition with the value in above it
                 switchTiles(blank: blankPosition,val: (blankPosition - gridSize))
+                moves += 1
             }
             break
         case "LEFT":
@@ -178,6 +213,7 @@ class Puzzle {
                 print("Left")
                 //switch the blankposition with the value in below it
                 switchTiles(blank: blankPosition,val: (blankPosition + 1))
+                moves += 1
             }
             break
         case "RIGHT":
@@ -186,6 +222,7 @@ class Puzzle {
                 print("Right")
                 //switch the blankposition with the value in below it
                 switchTiles(blank: blankPosition,val: (blankPosition - 1))
+                moves += 1
             }
             break
         default:

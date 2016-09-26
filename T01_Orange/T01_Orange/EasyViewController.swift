@@ -121,6 +121,14 @@ class EasyViewController: UIViewController {
                 print("other")
                 break
             }
+            if(puz.blankPosition == (puz.total - 1)){
+                if(puz.isFinished()){
+                    //Yea!
+                    puz.blankPosition = puz.total
+                    finishedLabel.hidden = false
+                    display()
+                }
+            }
         }
     }
     

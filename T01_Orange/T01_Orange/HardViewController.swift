@@ -10,6 +10,8 @@ import UIKit
 
 class HardViewController: UIViewController {
 
+    @IBOutlet weak var finishedLabel: UILabel!
+    @IBOutlet weak var movesLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         

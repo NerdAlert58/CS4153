@@ -7,22 +7,30 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MediumViewController: UIViewController {
 
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var finishedLabel: UILabel!
     var randomImage: [String] = ["pp1.jpeg"]
     var finished = false
-    
+    var clink = NSURL(fileURLWithPath: Bundle.main.path(forResource: "clink", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
     
     var puz = Puzzle(size: 4)
     //var imageArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: clink as URL)
+        }catch{
+            print("Whoops")
+        }
+        audioPlayer.prepareToPlay()
+    
         puz.shuffle()
         display()
         // Do any additional setup after loading the view.
@@ -42,7 +50,7 @@ class MediumViewController: UIViewController {
         
         //puz.Puzzle(size: 3)
         //randomImage = GKRandomSource().arrayByShufflingObjects(in: imageArray as [String])
-        //display(numb: 2)
+        display(numb: 2)
     }
     
     
@@ -105,8 +113,10 @@ class MediumViewController: UIViewController {
             label.textAlignment = NSTextAlignment.center
             label.text = String(puz.total)
             self.view.addSubview(label)
+            self.view.gestureRecognizers?.forEach(self.view.removeGestureRecognizer)
+            nextButton.isHidden = false
         }
-        
+        audioPlayer.play()
         //print("sorted index array ")
     }
     
@@ -126,19 +136,19 @@ class MediumViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.right:
                 //print("Swiped right")
                 puz.modArray(g: "RIGHT")
-                //display(numb: 2)
+                display()
             case UISwipeGestureRecognizerDirection.down:
                 //print("Swiped down")
                 puz.modArray(g: "DOWN")
-                //display(numb: 2)
+                display()
             case UISwipeGestureRecognizerDirection.left:
                 //print("Swiped left")
                 puz.modArray(g: "LEFT")
-                //display(numb: 2)
+                display()
             case UISwipeGestureRecognizerDirection.up:
                 //print("Swiped up")
                 puz.modArray(g: "UP")
-                //display(numb: 2)
+                display()
             default:
                 //print("other")
                 break
@@ -174,7 +184,7 @@ class MediumViewController: UIViewController {
             puz.printPuzzle()
             break
         }
-        //display()
+        display()
     }
     
     override func didReceiveMemoryWarning() {

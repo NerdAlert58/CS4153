@@ -7,21 +7,28 @@
 //
 
 import UIKit
-
+import AVFoundation
 class HardViewController: UIViewController {
     
+    @IBOutlet weak var b2startButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var finishedLabel: UILabel!
     var randomImage: [String] = ["pp1.jpeg"]
     var finished = false
-    
+    var clink = NSURL(fileURLWithPath: Bundle.main.path(forResource: "clink", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
     
     var puz = Puzzle(size: 5)
     //var imageArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: clink as URL)
+        }catch{
+            print("Whoops")
+        }
+        audioPlayer.prepareToPlay()
         
         puz.shuffle()
         display()
@@ -105,8 +112,10 @@ class HardViewController: UIViewController {
             label.textAlignment = NSTextAlignment.center
             label.text = String(puz.total)
             self.view.addSubview(label)
+            self.view.gestureRecognizers?.forEach(self.view.removeGestureRecognizer)
+            b2startButton.isHidden = false
         }
-        
+        audioPlayer.play()
         //print("sorted index array ")
     }
     
@@ -126,18 +135,21 @@ class HardViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.right:
                 //print("Swiped right")
                 puz.modArray(g: "RIGHT")
-            //display(numb: 2)
+                display()
             case UISwipeGestureRecognizerDirection.down:
                 //print("Swiped down")
                 puz.modArray(g: "DOWN")
+                display()
             //display(numb: 2)
             case UISwipeGestureRecognizerDirection.left:
                 //print("Swiped left")
                 puz.modArray(g: "LEFT")
+                display()
             //display(numb: 2)
             case UISwipeGestureRecognizerDirection.up:
                 //print("Swiped up")
                 puz.modArray(g: "UP")
+                display()
             //display(numb: 2)
             default:
                 //print("other")

@@ -13,6 +13,7 @@ import AVFoundation
 
 class EasyViewController: UIViewController {
 
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var finishedLabel: UILabel!
     var randomImage: [String] = ["pp1.jpeg"]
@@ -104,6 +105,8 @@ class EasyViewController: UIViewController {
             let myTileImage = UIImageView(image: thisImage)
             myTileImage.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
             self.view.addSubview(myTileImage)
+            self.view.gestureRecognizers?.forEach(self.view.removeGestureRecognizer)
+            nextButton.isHidden = false
         }
         audioPlayer.play()
         print("sorted index array ")

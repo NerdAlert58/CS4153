@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,9 +53,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-9s-BWf">
-                                <frame key="frameInset" minX="111" minY="125" width="193" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-9s-BWf">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bwz-9s-BWf" secondAttribute="height" multiplier="193:65" id="ghX-6h-dOF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" image="unpressed-Easy.png" backgroundImage="pressed-Easy.png"/>
                                 <state key="highlighted" image="pressed-Easy.png"/>
@@ -61,18 +64,20 @@
                                     <segue destination="K7V-gA-JCQ" kind="show" id="AFJ-Dd-UnD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-Nf-GfD">
-                                <frame key="frameInset" minX="111" minY="253" width="193" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-Nf-GfD">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oqd-Nf-GfD" secondAttribute="height" multiplier="193:65" id="2Hd-PK-bBS"/>
+                                </constraints>
                                 <state key="normal" image="unpressed-Medium.png"/>
                                 <state key="highlighted" image="pressed-Medium.png"/>
                                 <connections>
                                     <segue destination="AdH-36-D6s" kind="show" id="mWF-Np-oFD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UG-Y7-98D">
-                                <frame key="frameInset" minX="111" minY="376" width="193" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UG-Y7-98D">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5UG-Y7-98D" secondAttribute="height" multiplier="193:65" id="4ro-eZ-RRK"/>
+                                </constraints>
                                 <state key="normal" image="unpressed-Hard.png"/>
                                 <state key="highlighted" image="pressed-Hard.png"/>
                                 <connections>
@@ -81,6 +86,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1554649079" green="0.14940237479999999" blue="0.26704844830000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bwz-9s-BWf" firstAttribute="leading" secondItem="zmI-1s-xY0" secondAttribute="leadingMargin" constant="91" id="4OU-kr-hWV"/>
+                            <constraint firstItem="oqd-Nf-GfD" firstAttribute="leading" secondItem="zmI-1s-xY0" secondAttribute="leadingMargin" constant="91" id="7Fp-7v-Z1w"/>
+                            <constraint firstItem="oqd-Nf-GfD" firstAttribute="top" secondItem="bwz-9s-BWf" secondAttribute="bottom" constant="63" id="8lB-iI-Ucy"/>
+                            <constraint firstItem="5UG-Y7-98D" firstAttribute="top" secondItem="oqd-Nf-GfD" secondAttribute="bottom" constant="63" id="O4g-rL-w5i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bwz-9s-BWf" secondAttribute="trailing" constant="90" id="Q9t-IO-hP0"/>
+                            <constraint firstItem="5UG-Y7-98D" firstAttribute="leading" secondItem="zmI-1s-xY0" secondAttribute="leadingMargin" constant="91" id="Vp0-Pc-mC8"/>
+                            <constraint firstItem="oqd-Nf-GfD" firstAttribute="centerX" secondItem="zmI-1s-xY0" secondAttribute="centerX" id="YBS-od-oNn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5UG-Y7-98D" secondAttribute="trailing" constant="90" id="bwa-3w-6LQ"/>
+                            <constraint firstItem="5UG-Y7-98D" firstAttribute="centerX" secondItem="zmI-1s-xY0" secondAttribute="centerX" id="gkc-os-Prm"/>
+                            <constraint firstItem="bwz-9s-BWf" firstAttribute="top" secondItem="IMZ-3s-YS4" secondAttribute="bottom" constant="105" id="jXZ-Qe-wYF"/>
+                            <constraint firstItem="bwz-9s-BWf" firstAttribute="centerX" secondItem="zmI-1s-xY0" secondAttribute="centerX" id="ntr-yY-3Hj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oqd-Nf-GfD" secondAttribute="trailing" constant="90" id="xWx-Vj-Hcv"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btnEasy" destination="bwz-9s-BWf" id="Qaz-mw-VuV"/>
@@ -118,6 +137,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5w-eA-38H">
+                                <frame key="frameInset" minX="171" minY="629" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next Level"/>
+                                <connections>
+                                    <segue destination="AdH-36-D6s" kind="show" id="fRc-yA-02H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1554649079" green="0.14940237479999999" blue="0.26704844830000002" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -125,6 +152,7 @@
                     <connections>
                         <outlet property="finishedLabel" destination="EzE-7u-Kq3" id="SZI-gK-svp"/>
                         <outlet property="movesLabel" destination="W9a-mQ-OCq" id="76g-Uq-EoD"/>
+                        <outlet property="nextButton" destination="L5w-eA-38H" id="foW-fZ-TIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHF-Kp-rWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,14 +172,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go Pokes!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCf-ss-Mad">
-                                <frame key="frameInset" minX="99" minY="696" width="196" height="32"/>
+                                <frame key="frameInset" minX="109" minY="696" width="196" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBo-tn-I1G">
+                                <frame key="frameInset" minX="171" minY="629" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next Level"/>
+                                <connections>
+                                    <segue destination="t77-nX-xec" kind="show" id="eV3-yP-UhY"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moves: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3A-RR-bIN">
-                                <frame key="frameInset" minX="10" minY="667" width="374" height="21"/>
+                                <frame key="frameInset" minX="20" minY="667" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -163,11 +199,12 @@
                     <connections>
                         <outlet property="finishedLabel" destination="sCf-ss-Mad" id="yGw-3t-K5S"/>
                         <outlet property="movesLabel" destination="S3A-RR-bIN" id="547-hR-KRi"/>
+                        <outlet property="nextButton" destination="qBo-tn-I1G" id="9Z4-NZ-3hg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POT-LH-rvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="267"/>
+            <point key="canvasLocation" x="1702.8985507246377" y="266.57608695652175"/>
         </scene>
         <!--Hard View Controller-->
         <scene sceneID="R9e-0O-oaV">
@@ -195,10 +232,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsK-M5-MWL">
+                                <frame key="frameInset" minX="162" minY="617" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to Start"/>
+                                <connections>
+                                    <segue destination="fgp-tz-iwU" kind="show" id="FQg-FF-PrW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1554649079" green="0.14940237479999999" blue="0.26704844830000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="b2startButton" destination="UsK-M5-MWL" id="IMq-ks-kei"/>
                         <outlet property="finishedLabel" destination="Gcv-x8-lxG" id="v1B-Vy-lOI"/>
                         <outlet property="movesLabel" destination="Zgm-zY-2af" id="eeK-dc-u9X"/>
                     </connections>
@@ -218,4 +264,9 @@
         <image name="unpressed-Medium.png" width="470" height="172"/>
         <image name="unpressed-Start.png" width="470" height="172"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eV3-yP-UhY"/>
+        <segue reference="fRc-yA-02H"/>
+        <segue reference="FQg-FF-PrW"/>
+    </inferredMetricsTieBreakers>
 </document>

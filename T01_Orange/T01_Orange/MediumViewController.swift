@@ -16,13 +16,13 @@ class MediumViewController: UIViewController {
     var finished = false
     
     
-    var puz = Puzzle(size: 3)
-    var imageArray: [String] = ["pp1.jpeg","pp2.jpeg","pp3.jpeg","pp4.jpeg","pp5.jpeg","pp6.jpeg","pp7.jpeg","pp8.jpeg"]
+    var puz = Puzzle(size: 4)
+    //var imageArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        display()
+        
         puz.shuffle()
         display()
         // Do any additional setup after loading the view.
@@ -38,11 +38,11 @@ class MediumViewController: UIViewController {
         let slideDown = UISwipeGestureRecognizer(target: self, action:#selector(EasyViewController.slideBlock(gesture:)))
         slideDown.direction = UISwipeGestureRecognizerDirection.down
         self.view.addGestureRecognizer(slideDown)
-        print("Added all gestures")
+        //print("Added all gestures")
         
         //puz.Puzzle(size: 3)
         //randomImage = GKRandomSource().arrayByShufflingObjects(in: imageArray as [String])
-        display(numb: 1)
+        //display(numb: 2)
     }
     
     
@@ -57,15 +57,16 @@ class MediumViewController: UIViewController {
         //width and height of tiles
         let wtile = ((Int(winw) - (wline * puz.gridSize))) / puz.gridSize
         let htile = wtile
-        print("winw is \(winw)")
-        print("tile is \(wtile) X \(htile)")
-        print("wline is \(wline)")
+        //print("winw is \(winw)")
+        //print("tile is \(wtile) X \(htile)")
+        //print("wline is \(wline)")
         
         let imageback = "gray.png"
         let image = UIImage(named: imageback)
         var xVar = 3
         var yVar = 100
         var it = 0
+        var label = UILabel()
         
         for _ in 0..<puz.gridSize {
             for _ in 0..<puz.gridSize {
@@ -74,10 +75,15 @@ class MediumViewController: UIViewController {
                     myEmptyTile.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
                     self.view.addSubview(myEmptyTile)
                 }else {
-                    let thisImage = UIImage(named: "pp\(puz.p[it]).jpeg")
+                    let thisImage = UIImage(named: "tile.png")
                     let myTileImage = UIImageView(image: thisImage)
                     myTileImage.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
                     self.view.addSubview(myTileImage)
+                    label = UILabel(frame: CGRect(x:xVar, y:yVar, width:wtile, height: htile))
+                    label.font = UIFont(name: label.font.fontName, size: 30)
+                    label.textAlignment = NSTextAlignment.center
+                    label.text = String(puz.p[it])
+                    self.view.addSubview(label)
                 }
                 it += 1
                 xVar = xVar+wtile+wline
@@ -90,13 +96,18 @@ class MediumViewController: UIViewController {
             xVar = xVar + (puz.gridSize - 1)*(wtile+wline)
             yVar = 100
             yVar = yVar + (puz.gridSize - 1)*(htile+wline)
-            let thisImage = UIImage(named: "pp\(puz.total).jpeg")
+            let thisImage = UIImage(named: "tile.png")
             let myTileImage = UIImageView(image: thisImage)
             myTileImage.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
             self.view.addSubview(myTileImage)
+            label = UILabel(frame: CGRect(x:xVar, y:yVar, width:wtile, height: htile))
+            label.font = UIFont(name: label.font.fontName, size: 30)
+            label.textAlignment = NSTextAlignment.center
+            label.text = String(puz.total)
+            self.view.addSubview(label)
         }
         
-        print("sorted index array ")
+        //print("sorted index array ")
     }
     
     func switchTiles(blank: Int,val: Int){
@@ -108,28 +119,28 @@ class MediumViewController: UIViewController {
     
     func slideBlock(gesture: UIGestureRecognizer)
     {
-        print("Gesture Detected")
+        //print("Gesture Detected")
         if let slideGesture = gesture as? UISwipeGestureRecognizer {
-            print("Gesture is a slide")
+            //print("Gesture is a slide")
             switch slideGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
-                print("Swiped right")
+                //print("Swiped right")
                 puz.modArray(g: "RIGHT")
-                display(numb: 1)
+                //display(numb: 2)
             case UISwipeGestureRecognizerDirection.down:
-                print("Swiped down")
+                //print("Swiped down")
                 puz.modArray(g: "DOWN")
-                display(numb: 1)
+                //display(numb: 2)
             case UISwipeGestureRecognizerDirection.left:
-                print("Swiped left")
+                //print("Swiped left")
                 puz.modArray(g: "LEFT")
-                display(numb: 1)
+                //display(numb: 2)
             case UISwipeGestureRecognizerDirection.up:
-                print("Swiped up")
+                //print("Swiped up")
                 puz.modArray(g: "UP")
-                display(numb: 1)
+                //display(numb: 2)
             default:
-                print("other")
+                //print("other")
                 break
             }
             if(puz.blankPosition == (puz.total - 1)){
@@ -137,7 +148,7 @@ class MediumViewController: UIViewController {
                     //Yea!
                     //puz.blankPosition = puz.total + 1
                     finished = true
-                    print("The new blank position is: \(puz.blankPosition)")
+                    //print("The new blank position is: \(puz.blankPosition)")
                     finishedLabel.isHidden = false
                     display()
                 }
@@ -163,7 +174,7 @@ class MediumViewController: UIViewController {
             puz.printPuzzle()
             break
         }
-        display()
+        //display()
     }
     
     override func didReceiveMemoryWarning() {

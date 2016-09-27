@@ -8,6 +8,7 @@
 
 import UIKit
 import GameplayKit
+import AVFoundation
 
 
 class EasyViewController: UIViewController {
@@ -16,6 +17,8 @@ class EasyViewController: UIViewController {
     @IBOutlet weak var finishedLabel: UILabel!
     var randomImage: [String] = ["pp1.jpeg"]
     var finished = false
+    var clink = NSURL(fileURLWithPath: Bundle.main.path(forResource: "clink", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
     
     
     var puz = Puzzle(size: 3)
@@ -23,8 +26,13 @@ class EasyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        display()
+        do{
+        audioPlayer = try AVAudioPlayer(contentsOf: clink as URL)
+        }catch{
+            print("Whoops")
+        }
+        audioPlayer.prepareToPlay()
+//      display()
         puz.shuffle()
         display()
         // Do any additional setup after loading the view.
@@ -97,7 +105,7 @@ class EasyViewController: UIViewController {
             myTileImage.frame = CGRect(x: xVar, y: yVar, width: wtile, height:htile)
             self.view.addSubview(myTileImage)
         }
-        
+        audioPlayer.play()
         print("sorted index array ")
     }
     

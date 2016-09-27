@@ -1,0 +1,138 @@
+\documentclass [10pt] {article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{textcomp}
+\usepackage{listings,color}
+\usepackage{verbatim}
+\usepackage{chngpage}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{boxedminipage}
+\usepackage{enumerate}
+\usepackage{lineno}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+\def\eolqed{\hspace{\stretch1}\ensuremath\qedsymbol}
+\newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$}}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{7.7in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parindent}{0.25in}
+\setlength{\parskip}{0.25in}
+
+\lstset{
+basicstyle=\footnotesize,
+breaklines=true,
+frame=single,
+numbers=left,
+keywordstyle=\color{blue},
+stringstyle=\color{cyan},
+commentstyle=\color{red},
+language=Java,
+showstringspaces=false,
+tabsize=2
+}
+
+\title{CS 4153: Mobile Application Development \newline
+T01_Orange}
+\author{Scott Bushyhead}
+\begin{document}
+
+\begin{flushright}
+{\huge  CS 4153: Mobile Application Development}\\[5pt]
+{\huge  T01\_Orange}\\[15pt]
+\vspace{4pt}
+\hrule
+\vspace{4pt}
+\hrule
+{\large  Scott Bushyhead, Tyler Weppler, Srivalli Kanchibotla, Ammar Hassan}\\[5pt]
+{\large September 27, 2016}\\[5pt]
+\end{flushright}
+
+\newpage
+
+% \begin{verbatim}
+% \end{verbatim}
+% \includegraphics[width=2.5in]{Full Path to File}
+
+\section{How to Play}
+
+\subsection{Movement}
+When the puzzle begins, there will always be a single tile that is shaded gray.  This is the blank.  When the user swipes up, down, left or right, the tile next to the blank will be moved into that space leaving a blank space where the tile started out.  In the event, the users swipes in a direction that is impossible (There is not tile available to slide into the blank from that direction), nothing will happen!  Try swiping in a different direction!
+\subsection{Objective}
+The goal of each level is simple:  If the puzzle is a picture puzzle, the goal is to rearrange the individual tiles to create a larger picture.  If the puzzle is numbered tiles, the goal is to position the tiles in order from smallest to largest, starting in the top left, moving across the row, then wrapping to the next row.
+
+\section{Borrowed Classes}
+
+\subsection{AVFoundation}
+AVFoundation was utilized to add the audio (``wooden clink'') so that when the tiles move, the sound plays to illustrate that the tiles ``hit'' each other and stopped.
+
+\subsection{GameplayKit}
+GamplayKit was utilized as a random number generator for our puzzle shuffle method.
+
+\section{Special Features}
+
+\subsection{Game Mechanics}
+TileSlide only houses 3 levels to meet the assignment requirements, but it is much more.  The Puzzle class was written to function for any puzzle size from 2X2 to nXn. It would require only minimal effort to add additional ViewControllers and make the puzzles larger.  If the user wanted to go past a 9X9 puzzle, the only change required is to shrink the font size on the tiles so that the numbers fit.  No additional functionality would be needed, it is already coded to work!  Also, we could easily add a button, that would allow the user to reshuffle the tiles to play the current level again, or even restart the current game.  We just didn't implement them for the assignment.
+
+\subsection{UI Decor}
+\subsubsection{Buttons}
+TileSlide has additional images created for the actual button presses for two purposes:
+\begin{enumerate}
+\item Aesthetics:  It looks nice!
+\item Informative:  It allows the user to know that their ``button click'' was recognized and actioned.
+\end{enumerate}
+\subsubsection{Tiles}
+When you think of a truly nice puzzle game, you might recall how well built the wooden versions used to be.  The movements were smooth.  The pieces were perfectly uniform. Enter plastic... Every version that followed seem to have problems!  A tile might be slightly ``off'' size-wise.  This would lead to the puzzle falling completely apart, not sliding smoothly, etc.  So to subtly allude to the fact that our version, while virtual, is robust and not following the paradigm of the plastic versions.  We chose to use a nice image of wood for our background and buttons.  We also chose to pay tribute to our school by creating a level using Pistol Pete.
+
+
+
+\section{Remarks}
+\begin{enumerate}
+\item Team\_Orange is a great group of individuals.  Many skills sets come together nicely so we all bring something to the group and I think our projects will demonstrate the fact. -Scott
+\end{enumerate}
+
+Deadline: September 29, 2016 23:59
+
+\end{document}
+

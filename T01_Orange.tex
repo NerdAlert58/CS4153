@@ -79,14 +79,15 @@ T01_Orange}
 \begin{document}
 
 \begin{flushright}
-{\huge  CS 4153: Mobile Application Development}\\[5pt]
-{\huge  T01\_Orange}\\[15pt]
+{\huge  Fab Five / Team Orange Contract}\\[5pt]
+{\huge  Fall 2016 HRAD/CS}\\[15pt]
 \vspace{4pt}
 \hrule
 \vspace{4pt}
 \hrule
 {\large  Scott Bushyhead, Tyler Weppler, Srivalli Kanchibotla, Ammar Hassan}\\[5pt]
-{\large September 27, 2016}\\[5pt]
+{\large  Rachel Larson, Jared Fimple, Yue Lai, Kimberly Richard, Jiabao Sun}\\[5pt]
+{\large October 13, 2016}\\[5pt]
 \end{flushright}
 
 \newpage
@@ -95,47 +96,81 @@ T01_Orange}
 % \end{verbatim}
 % \includegraphics[width=2.5in]{Full Path to File}
 
-\section{How to Play}
-
-\subsection{Movement}
-When the puzzle begins, there will always be a single tile that is shaded gray.  This is the blank.  When the user swipes up, down, left or right, the tile next to the blank will be moved into that space leaving a blank space where the tile started out.  In the event, the users swipes in a direction that is impossible (There is not tile available to slide into the blank from that direction), nothing will happen!  Try swiping in a different direction!
-\subsection{Objective}
-The goal of each level is simple:  If the puzzle is a picture puzzle, the goal is to rearrange the individual tiles to create a larger picture.  If the puzzle is numbered tiles, the goal is to position the tiles in order from smallest to largest, starting in the top left, moving across the row, then wrapping to the next row.
-
-\section{Borrowed Classes}
-
-\subsection{AVFoundation}
-AVFoundation was utilized to add the audio (``wooden clink'') so that when the tiles move, the sound plays to illustrate that the tiles ``hit'' each other and stopped.
-
-\subsection{GameplayKit}
-GamplayKit was utilized as a random number generator for our puzzle shuffle method.
-
-\section{Special Features}
-
-\subsection{Game Mechanics}
-TileSlide only houses 3 levels to meet the assignment requirements, but it is much more.  The Puzzle class was written to function for any puzzle size from 2X2 to nXn. It would require only minimal effort to add additional ViewControllers and make the puzzles larger.  If the user wanted to go past a 9X9 puzzle, the only change required is to shrink the font size on the tiles so that the numbers fit.  No additional functionality would be needed, it is already coded to work!  Also, we could easily add a button, that would allow the user to reshuffle the tiles to play the current level again, or even restart the current game.  We just didn't implement them for the assignment.
-
-\subsection{UI Decor}
-\subsubsection{Buttons}
-TileSlide has additional images created for the actual button presses for two purposes:
+\section{Map location- drop pins and change colors based on where they have been}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to add maps to a project and whether or not we can interact with the pin drop paradigm}
+\subsection{Requirement 2: Tasks}
+\subsubsection{Location Class}
 \begin{enumerate}
-\item Aesthetics:  It looks nice!
-\item Informative:  It allows the user to know that their ``button click'' was recognized and actioned.
+\item Name
+\item Date
+\item Tie to Record
+\item Array of Pins
+\item Longitude
+\item Latitude
+\item Type - Used to determine Pin color
 \end{enumerate}
-\subsubsection{Tiles}
-When you think of a truly nice puzzle game, you might recall how well built the wooden versions used to be.  The movements were smooth.  The pieces were perfectly uniform. Enter plastic... Every version that followed seem to have problems!  A tile might be slightly ``off'' size-wise.  This would lead to the puzzle falling completely apart, not sliding smoothly, etc.  So to subtly allude to the fact that our version, while virtual, is robust and not following the paradigm of the plastic versions.  We chose to use a nice image of wood for our background and buttons.  We also chose to pay tribute to our school by creating a level using Pistol Pete.
-
-
-
-\section{Remarks}
+\subsubsection{Pin Class}
 \begin{enumerate}
-\item Team\_Orange is a great group of individuals.  Many skills sets come together nicely so we all bring something to the group and I think our projects will demonstrate the fact. - Scott
-\item Team\_Orange works well with object oriented programming making this project easy to integrate as a team. - Tyler
-\item Team orange has been very interactive right from the start which made it easy to work together and our project is the result of good teamwork. - Srivalli
-\item Team Orange has members those have good knowledge in programming.  It is a good opportunity to learn from each other in this team.  Team Orange will look forward to work on the final project. - Ammar
+\item Name
+\item Color
+\item Longitude
+\item Latitude
 \end{enumerate}
+\subsection{Requirement 3: Total Time Estimate}
 
-Deadline: September 29, 2016 23:59
+
+\section{You can create a network by adding friends}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to either store friends as part of the app or integrate with facebook}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+
+
+\section{Share your trips with friends}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to either store friends as part of the app or integrate with facebook}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+
+
+\section{Based on past trips travel junkie will suggest future trips for the individual}
+\subsection{Requirement 1: Research}
+\subsubsection{This would need to be simulated.  It would require a database that could potentially use all our time in creation and still not be completed.}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+
+
+\section{Have a shared folder with friends and plan trips together}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to store this data on our database so the users will all see the same ``trip''}
+\subsection{Requirement 2: Tasks}
+\subsubsection{Database}
+\begin{enumerate}
+\item Access needs a key? so multiple users have the same access to the ``trip''
+\item Table for shared records with the ``users''?
+\item 
+\end{enumerate}
+\subsection{Requirement 3: Total Time Estimate}
+
+
+\section{Option to give a estimated price per person}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to map the math for this expectation. Further description required.}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+
+
+\section{Links to business website}
+\subsection{Requirement 1: Research}
+\subsubsection{This would need to be simulated.  This may be one that we could give HRAD the format to give me the data and I can add it into a table so more data would be available.  Further description required.}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+
+
+
+
+Deadline: November 17, 2016 23:59
 
 \end{document}
 

@@ -1,0 +1,212 @@
+\documentclass [10pt] {article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{textcomp}
+\usepackage{listings,color}
+\usepackage{verbatim}
+\usepackage{chngpage}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{boxedminipage}
+\usepackage{enumerate}
+\usepackage{lineno}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+\def\eolqed{\hspace{\stretch1}\ensuremath\qedsymbol}
+\newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$}}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{7.7in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parindent}{0.25in}
+\setlength{\parskip}{0.25in}
+
+\lstset{
+basicstyle=\footnotesize,
+breaklines=true,
+frame=single,
+numbers=left,
+keywordstyle=\color{blue},
+stringstyle=\color{cyan},
+commentstyle=\color{red},
+language=Java,
+showstringspaces=false,
+tabsize=2
+}
+
+\title{CS 4153: Mobile Application Development \newline
+T01_Orange}
+\author{Scott Bushyhead}
+\begin{document}
+
+\begin{flushright}
+{\huge  Fab Five / Team Orange Contract}\\[5pt]
+{\huge  Fall 2016 HRAD/CS}\\[15pt]
+\vspace{4pt}
+\hrule
+\vspace{4pt}
+\hrule
+{\large  Scott Bushyhead, Tyler Weppler, Srivalli Kanchibotla, Ammar Hassan}\\[5pt]
+{\large  Rachel Larson, Jared Fimple, Yue Lai, Kimberly Richard, Jiabao Sun}\\[5pt]
+{\large October 23, 2016}\\[5pt]
+\end{flushright}
+
+\newpage
+
+% \begin{verbatim}
+% \end{verbatim}
+% \includegraphics[width=2.5in]{Full Path to File}
+
+\section{Map location- drop pins and change colors based on where they have been}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to add maps to a project and whether or not we can interact with the pin drop paradigm}
+\subsection{Requirement 2: Tasks}
+\subsubsection{Location Class}
+\begin{enumerate}
+\item Name
+\item Date
+\item Tie to Record
+\item Array of Pins
+\item Longitude
+\item Latitude
+\item Type - Used to determine Pin color
+\end{enumerate}
+\subsubsection{Pin Class}
+\begin{enumerate}
+\item Name
+\item Color
+\item Longitude
+\item Latitude
+\end{enumerate}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item 28 hours - 20 research, 4 location class, 4 pin class
+\end{enumerate}
+
+\section{You can create a network by adding friends}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to either store friends as part of the app or integrate with facebook}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item 12 hours - 4 research, 8 implementation
+\end{enumerate}
+
+\section{Share your trips with friends}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to either store friends as part of the app or integrate with facebook}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item 12 hours - 4 research, 8 implementation
+\end{enumerate}
+
+\section{Based on past trips travel junkie will suggest future trips for the individual}
+\subsection{Requirement 1: Research}
+\subsubsection{This would need to be simulated.  It would require a database that could potentially use all our time in creation and still not be completed.}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item We could possibly simulate this, but it would take a ton of time to make this a reality.  Maybe we could create a form that HRAD could use to provide a number of records to pretend this is linked to a database that can suggest similar trips.
+\item 40 hours
+\end{enumerate}
+
+
+\section{Have a shared folder with friends and plan trips together}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to store this data on our database so the users will all see the same ``trip''}
+\subsection{Requirement 2: Tasks}
+\subsubsection{Database}
+\begin{enumerate}
+\item Access needs a key? so multiple users have the same access to the ``trip''
+\item Table for shared records with the ``users''?
+\end{enumerate}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item 80 hours - 2 people will be focusing on this piece.  We are going to have to revisit this piece to confirm the time required.  Need to build a database, then write the iOS code that can access it, which will also include utilizing multi-threading so that calls to the DB do not ``lock up'' the app while awaiting responses.
+\end{enumerate}
+
+\section{Option to give a estimated price per person}
+\subsection{Requirement 1: Research}
+\subsubsection{Need to understand how to map the math for this expectation. Further description required.}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item 20 hours - link to map classes and calculations
+\end{enumerate}
+
+
+\section{Links to business website}
+\subsection{Requirement 1: Research}
+\subsubsection{This would need to be simulated.  This may be one that we could give HRAD the format to give me the data and I can add it into a table so more data would be available.  Further description required.}
+\subsection{Requirement 2: Tasks}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item 40 hours - create form for HRAD to supply examples and we will add to database.
+\end{enumerate}
+
+\section{Design}
+\subsection{Colors}
+\subsection{Images}
+\subsection{Parts Integration}
+\subsection{Requirement 3: Total Time Estimate}
+\begin{enumerate}
+\item 80 hours - This is the finalizing and beautification that comes after functionality is achieved.
+\end{enumerate}
+
+\section{Grand Total}
+\begin{enumerate}
+\item 28 hours
+\item 12 hours
+\item 12 hours
+\item 40 hours
+\item 80 hours
+\item 20 hours
+\item 40 hours
+\item 80 hours
+\item Total - 312 hours
+\end{enumerate}
+
+Deadline: November 25, 2016 23:59
+
+\end{document}
+

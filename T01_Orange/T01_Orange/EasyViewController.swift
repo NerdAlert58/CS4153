@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GameplayKit
+//import GameplayKit
 import AVFoundation
 
 
